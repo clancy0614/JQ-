@@ -11,7 +11,7 @@ Sort the list:
 
 a[1], a[2], ..., a[i], a[i+1], ..., a[j],...
 
-For every pair of i and j >= i, check if a[i] + a[j] <= K. If yes, then {a[i], a[j]} is a good subset, and {a[i], a[j]} + any subset formed by numbers between i and j is also good. There are j-i-1 numbers between i and j (for j >= i + 1), so the number of subset including the empty set formed by these numbers is 2^(j-i-1).
+For every pair of i and j >= i, check if a[i] + a[j] <= K. If yes, then {a[i], a[j]} + any subset (including empty subset) formed by numbers between i and j is a good subset. There are j-i-1 numbers between i and j (for j >= i + 1), so the number of subset formed by these numbers is 2^(j-i-1).
 
 
 ```
