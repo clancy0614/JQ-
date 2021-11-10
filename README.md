@@ -6,6 +6,7 @@ https://leetcode.com/discuss/interview-question/268604/Google-interview-Number-o
 > For a given list of integers and integer K, find the number of non-empty subsets S such that min(S) + max(S) <= K.
 
 **My solution:**
+
 Sort the list: 
 
 a[1], a[2], ..., a[i], a[i+1], ..., a[j],...
@@ -26,3 +27,14 @@ def goodSubset(a, K):
                     nums += 2**(j-i-1)
     return nums
  ```
+
+Overall complexity: O(n^2)
+
+**Better solution**
+
+Sort the list. For i, use binary search to find the max j such that a[i] + a[j] <= K. 
+
+```
+```
+
+Overall complexity: O(n logn)
