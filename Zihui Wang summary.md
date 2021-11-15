@@ -66,4 +66,4 @@ df['sizeDeltaAtAsk'] = df['vol_lastask'] + df['asksize'].diff()
 
 # 第六题
 
-通过 pandas 的 shift(-40) 指令我们可以实现 （当前时刻的 excution price） - （40单位时间后的 mid price）的计算从而计算定义的 return
+通过 pandas 的 shift(-40) 指令我们可以实现 （当前时刻的 excution price） - （40单位时间后的 mid price）的操作从而计算定义的 return
