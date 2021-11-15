@@ -13,7 +13,7 @@ market size 的柱状分布图，横坐标为 market size，纵坐标为对应�
 
 可以发现，在出现 mid price 有变化但 spread 不变的情况下，market size 集中分布在 500 附近，相对来说属于 market size 比较小的范围（从图1中我们可以发现 market size 最高可达 4000 以上）。
 
-这种情况的原因可能是
+这种情况的原因可能是较大的 market size 通常反应了买卖双方活跃度较高，这种情况下 spread 可能会产生较大波动而并非保持不变。
 
 ![image](https://user-images.githubusercontent.com/88695029/141720855-cc974d9f-a37a-4a06-badb-880e93ebac0f.png)
 
