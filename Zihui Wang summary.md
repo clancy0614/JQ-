@@ -25,7 +25,7 @@ market size 的柱状分布图，横坐标为 market size，纵坐标为对应�
 
 如果i+1时刻读取的 lastprice 比i时刻的 midprice 要高（低），说明市场方向是向买（卖）移动，这种情况下i时刻的最低价的 ask 订单被买方主动匹配（最高价的 bid 买单被卖方主动匹配）。
 
-* 有可能i时刻的最低价 ask 订单会全部成交（最高价 bid 订单全部成交）。举个例子，给定数据中从 updatecount = 3 到 4
+举个例子，给定的数据中，我们取 updatecount = 3 和 4
 
 
    | updateCount |   lastprice |  volume | bidsize | bid  |   ask |   asksize |
@@ -33,9 +33,8 @@ market size 的柱状分布图，横坐标为 market size，纵坐标为对应�
    | 3  |     26.77  |     361   |  518  |   26.77 |   26.78  |  1 |           
    | 4  |     26.79   |    374   |  42   |   26.78 |  26.79  | 44  | 
 
-  市场的最新成交价是26.79，比前一时刻的 midprice 更高，所以我们判断市场在向买移动。在 updatecount = 3的一行中，26.78元的 ask 订单被买方主动成交，对应的asksize是1。但是dv是13，剩下的12可以分配到当前的最新成交价，即26.79
+  市场的最新成交价是26.79，比前一时刻的 midprice 更高，所以我们判断市场在向买移动。在 updatecount = 3的一行中，26.78元的 ask 订单被买方主动成交，对应的 asksize 是1。但是 dv 是13，剩下的12可以分配到当前的最新成交价，即26.79。因此dv中的一部分可以分配到上个时刻的 ask，对应的成交量 = 上个时刻的 asksize；dv中剩余的部分全部分配到当前时刻的 lastprice
 
-* 也有可能所有 dv 都能被 asksize（或bidsize）的变化量所解释。
 
 ### 情况2
 
