@@ -34,11 +34,15 @@ market size 的柱状分布图，横坐标为 market size，纵坐标为对应�
    | 4  |     26.79   |    374   |  42   |   26.78 |  26.79  | 44  | 
 
   市场的最新成交价是26.79，比前一时刻的 midprice 更高，所以我们判断市场在向买移动。在 updatecount = 3的一行中，26.78元的 ask 订单被买方主动成交，对应的 asksize 是1。但是 dv 是13，剩下的12可以分配到当前的最新成交价，即26.79。因此dv中的一部分可以分配到上个时刻的 ask，对应的成交量 = 上个时刻的 asksize；dv中剩余的部分全部分配到当前时刻的 lastprice
+  
+  当然也有可能上个时刻的 asksize 并没有被买方清零，这样会导致上个时刻和现在时刻的 ask price 相等。这种情况下， dv = (当前时刻的 ask size) - (上个时刻的 ask price)，也就是说，所有成交量都成交在 ask price上。
+  
+  假如市场是在向卖方移动，我们可以基于同样的原理分配dv
 
 
 ### 情况2
 
-如果i+1时刻读取的 lastprice 等于i时刻的 midprice，可以把dv全部分配到当前 lastprice 的价位。
+如果i+1时刻读取的 lastprice 等于i时刻的 midprice，我们可以把dv全部分配到当前 lastprice 的价位。
 
 ### 结论
 
